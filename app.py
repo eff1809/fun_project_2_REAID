@@ -69,12 +69,15 @@ def clean_ai_response(text: str) -> str:
 with st.sidebar:
     st.header("⚙️ Pengaturan Chatbot")
 
-    api_key = st.text_input(
-        "OpenRouter API Key",
-        type="password",
-        placeholder="sk-or-v1-..."
-    )
+    # api_key = st.text_input(
+    #     "OpenRouter API Key",
+    #     type="password",
+    #     placeholder="sk-or-v1-..."
+    # )
 
+    # Ganti cara mengambil API key
+    api_key = st.secrets["OPENROUTER_API_KEY"]  # Akan diambil dari Streamlit secrets
+    
     model = st.selectbox(
         "Model AI",
         [
