@@ -151,12 +151,21 @@ if user_message:
         "max_tokens": 800
     }
 
+    # headers = {
+    #     "Authorization": f"Bearer {api_key}",
+    #     "Content-Type": "application/json",
+    #     "HTTP-Referer": "http://localhost:8501",
+    #     "X-Title": "My Streamlit AI Chatbot"
+    # }
+    
+    # Ganti localhost dengan nama app kamu
     headers = {
         "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "http://localhost:8501",
-        "X-Title": "My Streamlit AI Chatbot"
+        "HTTP-Referer": "https://funproject2reaid-mdhypaistrefvwtsytgzer.streamlit.app",  # Update ini setelah deploy
+        "X-Title": "AI Chatbot Streamlit"
     }
+    
+    
 
     with st.chat_message("assistant"):
         with st.spinner("AI sedang menjawab..."):
